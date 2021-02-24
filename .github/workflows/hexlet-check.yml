@@ -29,8 +29,6 @@ jobs:
     name: Lint code base
     runs-on: ubuntu-latest
 
-        # Runs the Super-Linter action
-    - name: Run Linter
       uses: make lint
       env:
         DEFAULT_BRANCH: main
