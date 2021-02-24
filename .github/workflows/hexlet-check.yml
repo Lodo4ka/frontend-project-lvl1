@@ -31,7 +31,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      run: make lint
-      env:
-        DEFAULT_BRANCH: main
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
+
+      - name: Run Makefile
+        run: make lint
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
