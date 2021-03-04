@@ -1,8 +1,8 @@
-const { generateRandomNumber, isEvenNumber } = require('./utilNumber');
+const { generateRandomNumber, isEvenNumber } = require('./util');
 
 let countRightAnswer = 0;
 
-const generateCalculation = () => generateRandomNumber();
+const generateGame = () => generateRandomNumber();
 
 const rightAnswer = (answer) => {
   if (answer === 'yes') return 'no';
@@ -17,4 +17,4 @@ const checkAnswer = (expression, answer) => {
   return 'loose';
 };
 
-module.exports = { generateCalculation, checkAnswer, rightAnswer };
+module.exports = { generateGame, checkAnswer, rightAnswer };

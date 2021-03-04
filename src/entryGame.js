@@ -1,7 +1,8 @@
 const readlineSync = require('readline-sync');
 
-const guessNumber = (name, game) => {
-  const calculations = game.generateCalculation();
+const entryGame = (name, startPhrase, game) => {
+  console.log(startPhrase);
+  const calculations = game.generateGame();
   const answer = readlineSync.question(`Question: ${calculations}`);
   console.log(`Your answer: ${answer}!`);
   const result = game.checkAnswer(calculations, answer);
@@ -12,8 +13,8 @@ const guessNumber = (name, game) => {
     console.log(`Congratulations, ${name}!`);
   } else if (result === 'right') {
     console.log('Correct!');
-    guessNumber(name, game);
+    entryGame(name, startPhrase, game);
   }
 };
 
-module.exports = guessNumber;
+module.exports = entryGame;

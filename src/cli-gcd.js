@@ -1,10 +1,8 @@
-const readlineSync = require('readline-sync');
-const guessNumber = require('./guessNumber');
+const cli = require('./cli');
+const entryGame = require('./entryGame');
 const gcdGame = require('./gcdGame');
 
 module.exports = () => {
-  const name = readlineSync.question('May I have your name?');
-  console.log(`Hello ${name}!`);
-  console.log('Find the greatest common divisor of given numbers.');
-  guessNumber(name, gcdGame);
+  const name = cli();
+  entryGame(name, 'Find the greatest common divisor of given numbers.', gcdGame);
 };
