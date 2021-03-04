@@ -8,3 +8,6 @@
 
 #### Even number game
 https://asciinema.org/a/PuPLj1ngL6hUnuiaTkYQ7zr64
+
+#### Calculate number game
+https://asciinema.org/a/b7ZvlHTBFVqcxpE9wCPffVvwy
