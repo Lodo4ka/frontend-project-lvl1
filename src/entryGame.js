@@ -3,7 +3,7 @@ const readlineSync = require('readline-sync');
 const entryGame = (name, startPhrase, game) => {
   console.log(startPhrase);
   const calculations = game.generateGame();
-  const answer = readlineSync.question(`Question: ${calculations}`);
+  const answer = readlineSync.question(`Question: ${calculations}\n`);
   console.log(`Your answer: ${answer}!`);
   const result = game.checkAnswer(calculations, answer);
   if (result === 'loose') {
