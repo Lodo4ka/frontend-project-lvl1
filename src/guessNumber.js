@@ -11,6 +11,7 @@ const guessNumber = (name, game) => {
   } else if (result === 'win') {
     console.log(`Congratulations, ${name}!`);
   } else if (result === 'right') {
+    console.log('Correct!');
     guessNumber(name, game);
   }
 };
