@@ -1,8 +1,6 @@
 const readlineSync = require('readline-sync');
 
-const entryGame = (name, startPhrase, game) => {
-  console.log(`Hello ${name}!`);
-  console.log(startPhrase);
+const entryGame = (name, game) => {
   const calculations = game.generateGame();
   const answer = readlineSync.question(`Question: ${calculations}\n`);
   console.log(`Your answer: ${answer}!`);
@@ -14,7 +12,7 @@ const entryGame = (name, startPhrase, game) => {
     console.log(`Congratulations, ${name}!`);
   } else if (result === 'right') {
     console.log('Correct!');
-    entryGame(name, startPhrase, game);
+    entryGame(name, game);
   }
 };
 

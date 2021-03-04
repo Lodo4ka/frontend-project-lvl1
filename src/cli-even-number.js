@@ -4,6 +4,7 @@ const evenNumberGame = require('./evenNumberGame');
 
 module.exports = () => {
   const name = readlineSync.question('May I have your name? ');
-  entryGame(name,
-    'Answer "yes" if the number is even, otherwise answer "no".', evenNumberGame);
+  console.log(`Hello ${name}!`);
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  entryGame(name, evenNumberGame);
 };

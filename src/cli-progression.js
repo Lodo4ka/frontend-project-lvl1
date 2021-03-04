@@ -4,6 +4,7 @@ const progressionGame = require('./progressionGame');
 
 module.exports = () => {
   const name = readlineSync.question('May I have your name? ');
-  guessNumber(name,
-    'What number is missing in the progression?', progressionGame);
+  console.log(`Hello ${name}!`);
+  console.log('What number is missing in the progression?');
+  guessNumber(name, progressionGame);
 };

@@ -4,5 +4,7 @@ const calcGame = require('./calcGame');
 
 module.exports = () => {
   const name = readlineSync.question('May I have your name? ');
-  entryGame(name, 'What is the result of the expression?', calcGame);
+  console.log(`Hello ${name}!`);
+  console.log('What is the result of the expression?');
+  entryGame(name, calcGame);
 };
