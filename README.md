@@ -17,3 +17,7 @@ https://asciinema.org/a/NFfaV9DH7kXKVfmzsxVL6dlWO
 
 #### Missing of number in progression
 https://asciinema.org/a/z61ozDDTB9DQXyeWXTSctN35G
+
+#### Prime number in progression
+https://asciinema.org/a/3fqbm1REP39WSGO29Ls26FJmg
+
