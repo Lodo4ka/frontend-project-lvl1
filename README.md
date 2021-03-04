@@ -7,7 +7,13 @@
 ****
 
 #### Even number game
-https://asciinema.org/a/PuPLj1ngL6hUnuiaTkYQ7zr64
+https://asciinema.org/a/bOI9uOJmDhjeDe6CCzBbmZfGJ
 
 #### Calculate number game
-https://asciinema.org/a/b7ZvlHTBFVqcxpE9wCPffVvwy
+https://asciinema.org/a/Mv5YdTUPhbxEbR474IAZkfB27
+
+#### The greatest common divisor game
+https://asciinema.org/a/NFfaV9DH7kXKVfmzsxVL6dlWO
+
+#### Missing of number in progression
+https://asciinema.org/a/z61ozDDTB9DQXyeWXTSctN35G
