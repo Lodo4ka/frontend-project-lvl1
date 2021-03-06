@@ -1,6 +1,6 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
-const entryGame = (name, game) => {
+const playGame = (name, game) => {
   const calculations = game.generateGame();
   const answer = readlineSync.question(`Question: ${calculations}\n`);
   console.log(`Your answer: ${answer}!`);
@@ -12,8 +12,8 @@ const entryGame = (name, game) => {
     console.log(`Congratulations, ${name}!`);
   } else if (result === 'right') {
     console.log('Correct!');
-    entryGame(name, game);
+    playGame(name, game);
   }
 };
 
-export default entryGame;
+export default playGame;
