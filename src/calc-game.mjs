@@ -1,4 +1,4 @@
-import { generateRandomNumber, generateRandomMathOperator, calculateNumber } from "./util.mjs";
+import { generateRandomNumber, generateRandomMathOperator, calculateNumber } from './util.mjs';
 
 let countRightAnswer = 0;
 let correctAnswer = 0;
