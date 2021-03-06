@@ -1,6 +1,6 @@
 import readlineSync from "readline-sync";
-import entryGame from "./entryGame.mjs";
-import evenNumberGame from "./evenNumberGame.mjs";
+import entryGame from "./entry-game.mjs";
+import evenNumberGame from "./even-number-game.mjs";
 
 export default () => {
   const name = readlineSync.question('May I have your name? ');
