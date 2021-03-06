@@ -1,8 +1,9 @@
-const readlineSync = require('readline-sync');
-const entryGame = require('./entryGame');
-const primeGame = require('./primeGame');
+import readlineSync from "readline-sync";
+import entryGame from "./entryGame.mjs";
+import primeGame from "primeGame.mjs";
 
-module.exports = () => {
+
+export default () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello ${name}!`);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');

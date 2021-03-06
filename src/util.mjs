@@ -80,7 +80,7 @@ const isPrime = (number) => {
   return true;
 };
 
-module.exports = {
+export {
   generateRandomNumber,
   isEvenNumber,
   generateRandomMathOperator,

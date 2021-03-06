@@ -1,4 +1,5 @@
-const { generateRandomNumber, isEvenNumber } = require('./util');
+import { generateRandomNumber, isEvenNumber } from "./util.mjs";
+
 
 let countRightAnswer = 0;
 
@@ -17,4 +18,4 @@ const checkAnswer = (expression, answer) => {
   return 'loose';
 };
 
-module.exports = { generateGame, checkAnswer, rightAnswer };
+export default { generateGame, checkAnswer, rightAnswer };

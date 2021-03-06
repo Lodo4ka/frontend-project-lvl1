@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const cli = require('../src/cli-calc');
+import cli from "../src/cli-calc.mjs";
 
 console.log('Welcome to the Brain Games!');
 cli();

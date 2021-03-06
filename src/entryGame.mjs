@@ -1,4 +1,4 @@
-const readlineSync = require('readline-sync');
+import readlineSync from "readline-sync";
 
 const entryGame = (name, game) => {
   const calculations = game.generateGame();
@@ -16,4 +16,4 @@ const entryGame = (name, game) => {
   }
 };
 
-module.exports = entryGame;
+export default entryGame;

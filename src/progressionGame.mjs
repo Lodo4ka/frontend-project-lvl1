@@ -1,4 +1,5 @@
-const { generateProgression, removeElemProgression, calculateEmptyOfProgression } = require('./util');
+import { generateProgression, removeElemProgression, calculateEmptyOfProgression } from "./util.mjs";
+
 
 let countRightAnswer = 0;
 let correctAnswer = 0;
@@ -21,4 +22,4 @@ const checkAnswer = (expression, answer) => {
 
 const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
 
-module.exports = { generateGame, checkAnswer, rightAnswer };
+export default { generateGame, checkAnswer, rightAnswer };

@@ -1,4 +1,4 @@
-const { generateRandomNumber, isPrime } = require('./util');
+import { generateRandomNumber, nearDivider } from "./util.mjs";
 
 let countRightAnswer = 0;
 
@@ -18,4 +18,4 @@ const rightAnswer = (answer) => {
   return 'yes';
 };
 
-module.exports = { generateGame, checkAnswer, rightAnswer };
+export default { generateGame, checkAnswer, rightAnswer };

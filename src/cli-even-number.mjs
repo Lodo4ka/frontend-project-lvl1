@@ -1,8 +1,8 @@
-const readlineSync = require('readline-sync');
-const entryGame = require('./entryGame');
-const evenNumberGame = require('./evenNumberGame');
+import readlineSync from "readline-sync";
+import entryGame from "./entryGame.mjs";
+import evenNumberGame from "./evenNumberGame.mjs";
 
-module.exports = () => {
+export default () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello ${name}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
