@@ -1,7 +1,6 @@
 import readlineSync from "readline-sync";
 import entryGame from "./entryGame.mjs";
-import primeGame from "primeGame.mjs";
-
+import primeGame from "./primeGame.mjs";
 
 export default () => {
   const name = readlineSync.question('May I have your name? ');
