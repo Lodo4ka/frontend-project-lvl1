@@ -1,4 +1,4 @@
-import { generateRandomNumber, nearDivider } from "./util.mjs";
+import { generateRandomNumber, isPrime } from './util.mjs';
 
 let countRightAnswer = 0;
 

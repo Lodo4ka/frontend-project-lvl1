@@ -1,5 +1,4 @@
-import { generateRandomNumber, isEvenNumber } from "./util.mjs";
-
+import { generateRandomNumber, isEvenNumber } from './util.mjs';
 
 let countRightAnswer = 0;
 

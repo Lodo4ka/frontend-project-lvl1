@@ -1,5 +1,4 @@
-import { generateRandomNumber, nearDivider } from "./util.mjs";
-
+import { generateRandomNumber, nearDivider } from './util.mjs';
 
 let countRightAnswer = 0;
 let correctAnswer = 0;
