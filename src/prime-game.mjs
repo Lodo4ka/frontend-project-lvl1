@@ -1,7 +1,5 @@
 import generateRandomNumber from './util.mjs';
 
-let countRightAnswer = 0;
-
 const generateGame = () => generateRandomNumber();
 
 const isPrime = (number) => {
@@ -14,14 +12,8 @@ const isPrime = (number) => {
   return true;
 };
 
-const checkAnswer = (expression, answer) => {
-  if ((isPrime(expression) && answer === 'yes')
-    || (!isPrime(expression) && answer === 'no')) {
-    countRightAnswer += 1;
-    return countRightAnswer === 3 ? 'win' : 'right';
-  }
-  return 'loose';
-};
+const checkAnswer = (expression, answer) => (isPrime(expression) && answer === 'yes')
+    || (!isPrime(expression) && answer === 'no');
 
 const rightAnswer = (answer) => {
   if (answer === 'yes') return 'no';

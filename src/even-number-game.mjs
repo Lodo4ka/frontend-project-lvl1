@@ -1,7 +1,5 @@
 import generateRandomNumber from './util.mjs';
 
-let countRightAnswer = 0;
-
 const isEvenNumber = (number) => number % 2 === 0;
 
 const generateGame = () => generateRandomNumber();
@@ -11,12 +9,6 @@ const rightAnswer = (answer) => {
   return 'yes';
 };
 
-const checkAnswer = (expression, answer) => {
-  if ((isEvenNumber(expression) && answer === 'yes') || (!isEvenNumber(expression) && answer === 'no')) {
-    countRightAnswer += 1;
-    return countRightAnswer === 3 ? 'win' : 'right';
-  }
-  return 'loose';
-};
+const checkAnswer = (expression, answer) => (isEvenNumber(expression) && answer === 'yes') || (!isEvenNumber(expression) && answer === 'no');
 
 export default { generateGame, checkAnswer, rightAnswer };

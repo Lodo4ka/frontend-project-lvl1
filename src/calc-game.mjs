@@ -1,6 +1,5 @@
 import generateRandomNumber from './util.mjs';
 
-let countRightAnswer = 0;
 let correctAnswer = 0;
 
 const generateRandomMathOperator = () => {
@@ -34,11 +33,7 @@ const generateGame = () => {
 const checkAnswer = (expression, answer) => {
   const [firstNumber, mathOperator, secondNumber] = expression.split(' ');
   correctAnswer = calculateNumber(mathOperator, firstNumber, secondNumber);
-  if (correctAnswer === parseInt(answer, 10)) {
-    countRightAnswer += 1;
-    return countRightAnswer === 3 ? 'win' : 'right';
-  }
-  return 'loose';
+  return correctAnswer === parseInt(answer, 10);
 };
 
 const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;

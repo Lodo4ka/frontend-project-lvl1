@@ -1,6 +1,5 @@
 import generateRandomNumber from './util.mjs';
 
-let countRightAnswer = 0;
 let correctAnswer = 0;
 
 const nearDivider = (num1, num2) => {
@@ -25,11 +24,7 @@ const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
 const checkAnswer = (expression, answer) => {
   const [firstNumber, secondNumber] = expression.split(' ');
   correctAnswer = nearDivider(firstNumber, secondNumber);
-  if (correctAnswer === parseInt(answer, 10)) {
-    countRightAnswer += 1;
-    return countRightAnswer === 3 ? 'win' : 'right';
-  }
-  return 'loose';
+  return correctAnswer === parseInt(answer, 10);
 };
 
 export default { generateGame, checkAnswer, rightAnswer };
