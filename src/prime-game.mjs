@@ -1,8 +1,18 @@
-import { generateRandomNumber, isPrime } from './util.mjs';
+import generateRandomNumber from './util.mjs';
 
 let countRightAnswer = 0;
 
 const generateGame = () => generateRandomNumber();
+
+const isPrime = (number) => {
+  if (number < 1) return false;
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
 const checkAnswer = (expression, answer) => {
   if ((isPrime(expression) && answer === 'yes')

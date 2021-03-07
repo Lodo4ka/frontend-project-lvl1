@@ -1,6 +1,8 @@
-import { generateRandomNumber, isEvenNumber } from './util.mjs';
+import generateRandomNumber from './util.mjs';
 
 let countRightAnswer = 0;
+
+const isEvenNumber = (number) => number % 2 === 0;
 
 const generateGame = () => generateRandomNumber();
 
