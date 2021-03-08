@@ -32,7 +32,10 @@ const calculateEmptyOfProgression = (progression) => {
   }, 0);
   return progression.map((elem, i) => {
     if (elem === '..') {
-      return parseInt(progression[i - 1], 10) + parseInt(numberProg, 10);
+      if (progression[i - 1]) {
+        return parseInt(progression[i - 1], 10) + parseInt(numberProg, 10);
+      }
+      return parseInt(progression[i + 1], 10) - parseInt(numberProg, 10);
     }
     return false;
   }).filter(Boolean)[0];
