@@ -1,6 +1,6 @@
 import generateRandomNumber from './util.mjs';
 
-const generateGame = () => generateRandomNumber();
+const generateGame = () => generateRandomNumber(0, 99);
 
 const isPrime = (number) => {
   if (number < 1) return false;

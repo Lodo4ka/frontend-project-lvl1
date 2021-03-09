@@ -2,7 +2,7 @@ import generateRandomNumber from './util.mjs';
 
 const isEvenNumber = (number) => number % 2 === 0;
 
-const generateGame = () => generateRandomNumber();
+const generateGame = () => generateRandomNumber(0, 99);
 
 const rightAnswer = (answer) => {
   if (answer === 'yes') return 'no';

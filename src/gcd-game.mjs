@@ -14,8 +14,8 @@ const nearDivider = (num1, num2) => {
 };
 
 const generateGame = () => {
-  const firstNumber = generateRandomNumber();
-  const secondNumber = generateRandomNumber();
+  const firstNumber = generateRandomNumber(0, 99);
+  const secondNumber = generateRandomNumber(0, 99);
   return `${firstNumber} ${secondNumber}`;
 };
 

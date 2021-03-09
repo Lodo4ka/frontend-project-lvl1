@@ -4,7 +4,7 @@ let correctAnswer = 0;
 
 const generateRandomMathOperator = () => {
   const mathOperator = ['+', '-', '*'];
-  const operator = Math.floor(Math.random() * 3);
+  const operator = generateRandomNumber(0, 3);
   return mathOperator[operator];
 };
 
@@ -24,8 +24,8 @@ const calculateNumber = (operator, first, second) => {
 };
 
 const generateGame = () => {
-  const firstNumber = generateRandomNumber();
-  const secondNumber = generateRandomNumber();
+  const firstNumber = generateRandomNumber(0, 99);
+  const secondNumber = generateRandomNumber(0, 99);
   const mathOperator = generateRandomMathOperator();
   return `${firstNumber} ${mathOperator} ${secondNumber}`;
 };
