@@ -10,16 +10,14 @@ const generateRandomMathOperator = () => {
 };
 
 const calculateNumber = (operator, first, second) => {
-  const firstInt = parseInt(first, 10);
-  const secondInt = parseInt(second, 10);
   if (operator === '+') {
-    return firstInt + secondInt;
+    return first + second;
   }
   if (operator === '-') {
-    return firstInt - secondInt;
+    return first - second;
   }
   if (operator === '*') {
-    return firstInt * secondInt;
+    return first * second;
   }
   return 0;
 };
@@ -33,7 +31,8 @@ const generateGame = () => {
 
 const checkAnswer = (expression, answer) => {
   const [firstNumber, mathOperator, secondNumber] = expression.split(' ');
-  correctAnswer = calculateNumber(mathOperator, firstNumber, secondNumber);
+  correctAnswer = calculateNumber(mathOperator, parseInt(firstNumber, 10),
+    parseInt(secondNumber, 10));
   return correctAnswer === parseInt(answer, 10);
 };
 
