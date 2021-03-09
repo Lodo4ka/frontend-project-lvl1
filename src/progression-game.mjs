@@ -1,6 +1,7 @@
 import generateRandomNumber from './util.mjs';
 
 let correctAnswer = 0;
+const textRuleGame = 'What number is missing in the progression?';
 
 const removeElemProgression = (progression) => {
   const removedIndex = generateRandomNumber(0, 9);
@@ -55,4 +56,6 @@ const checkAnswer = (expression, answer) => {
 
 const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
 
-export default { generateGame, checkAnswer, rightAnswer };
+export default {
+  generateGame, checkAnswer, rightAnswer, textRuleGame,
+};

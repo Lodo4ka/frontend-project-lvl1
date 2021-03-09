@@ -1,6 +1,7 @@
 import generateRandomNumber from './util.mjs';
 
 let correctAnswer = 0;
+const textRuleGame = 'What is the result of the expression?';
 
 const generateRandomMathOperator = () => {
   const mathOperator = ['+', '-', '*'];
@@ -38,4 +39,6 @@ const checkAnswer = (expression, answer) => {
 
 const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
 
-export default { generateGame, checkAnswer, rightAnswer };
+export default {
+  generateGame, checkAnswer, rightAnswer, textRuleGame,
+};
