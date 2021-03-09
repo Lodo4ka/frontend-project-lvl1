@@ -4,7 +4,7 @@ let correctAnswer = 0;
 
 const generateRandomMathOperator = () => {
   const mathOperator = ['+', '-', '*'];
-  const operator = generateRandomNumber(0, 3);
+  const operator = generateRandomNumber(0, 2);
   return mathOperator[operator];
 };
 
