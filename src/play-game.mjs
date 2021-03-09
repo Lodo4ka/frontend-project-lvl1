@@ -2,7 +2,6 @@ import readlineSync from 'readline-sync';
 
 const playGame = (ruleGame, game) => {
   let countRightAnswer = 0;
-  let loose = false;
 
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
@@ -20,11 +19,10 @@ const playGame = (ruleGame, game) => {
     } else {
       console.log(`${answer} is wrong answer; Correct answer was '${game.rightAnswer(answer)}'.`);
       console.log(`Let's try again, ${name}!`);
-      loose = true;
       return;
     }
   }
-  while (countRightAnswer < 3 && !loose);
+  while (countRightAnswer < 3);
   console.log(`Congratulations, ${name}!`);
 };
 
