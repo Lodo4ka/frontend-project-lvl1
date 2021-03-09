@@ -1,5 +1,6 @@
-import generateRandomNumber from './util.mjs';
+import { generateRandomNumber, answerYesOrNo } from './util.mjs';
 
+let correctAnswer = '';
 const textRuleGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const generateGame = () => generateRandomNumber(0, 99);
@@ -14,13 +15,13 @@ const isPrime = (number) => {
   return true;
 };
 
-const checkAnswer = (expression, answer) => (isPrime(expression) && answer === 'yes')
-    || (!isPrime(expression) && answer === 'no');
-
-const rightAnswer = (answer) => {
-  if (answer === 'yes') return 'no';
-  return 'yes';
+const checkAnswer = (expression, answer) => {
+  const primeAnswer = isPrime(expression);
+  correctAnswer = answerYesOrNo(primeAnswer);
+  return correctAnswer === answer;
 };
+
+const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
 
 export default {
   generateGame, checkAnswer, rightAnswer, textRuleGame,

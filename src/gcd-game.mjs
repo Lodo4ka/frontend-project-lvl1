@@ -1,4 +1,4 @@
-import generateRandomNumber from './util.mjs';
+import { generateRandomNumber } from './util.mjs';
 
 let correctAnswer = 0;
 const textRuleGame = 'Find the greatest common divisor of given numbers.';
