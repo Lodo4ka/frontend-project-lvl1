@@ -3,7 +3,7 @@ import generateRandomNumber from './util.mjs';
 let correctAnswer = 0;
 
 const removeElemProgression = (progression) => {
-  const removedIndex = generateRandomNumber(0, 10);
+  const removedIndex = generateRandomNumber(0, 9);
   return progression.map((progElem, i) => {
     if (i === removedIndex) {
       return '..';
