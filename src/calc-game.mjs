@@ -10,16 +10,12 @@ const generateRandomMathOperator = () => {
 };
 
 const calculateNumber = (operator, first, second) => {
-  if (operator === '+') {
-    return first + second;
-  }
-  if (operator === '-') {
-    return first - second;
-  }
-  if (operator === '*') {
-    return first * second;
-  }
-  return 0;
+  const mathOperators = {
+    '+': (firstArg, secondArg) => firstArg + secondArg,
+    '-': (firstArg, secondArg) => firstArg - secondArg,
+    '*': (firstArg, secondArg) => firstArg * secondArg,
+  };
+  return mathOperators[operator](first, second);
 };
 
 const generateGame = () => {
