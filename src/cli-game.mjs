@@ -7,27 +7,27 @@ import progressionGame from './progression-game.mjs';
 
 const dictGames = {
   even: {
-    phrase: 'Answer "yes" if the number is even, otherwise answer "no".',
+    ruleGame: 'Answer "yes" if the number is even, otherwise answer "no".',
     game: evenNumberGame,
   },
   gcd: {
-    phrase: 'Find the greatest common divisor of given numbers.',
+    ruleGame: 'Find the greatest common divisor of given numbers.',
     game: gcdGame,
   },
   prime: {
-    phrase: 'Answer "yes" if given number is prime. Otherwise answer "no".',
+    ruleGame: 'Answer "yes" if given number is prime. Otherwise answer "no".',
     game: primeGame,
   },
   progression: {
-    phrase: 'What number is missing in the progression?',
+    ruleGame: 'What number is missing in the progression?',
     game: progressionGame,
   },
   calc: {
-    phrase: 'What is the result of the expression?',
+    ruleGame: 'What is the result of the expression?',
     game: calcGame,
   },
 };
 
 export default (nameOfGame) => {
-  playGame(dictGames[nameOfGame].phrase, dictGames[nameOfGame].game);
+  playGame(dictGames[nameOfGame].ruleGame, dictGames[nameOfGame].game);
 };
