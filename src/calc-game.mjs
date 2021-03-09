@@ -5,7 +5,7 @@ const textRuleGame = 'What is the result of the expression?';
 
 const generateRandomMathOperator = () => {
   const mathOperator = ['+', '-', '*'];
-  const operator = generateRandomNumber(0, 2);
+  const operator = generateRandomNumber(0, mathOperator.length - 1);
   return mathOperator[operator];
 };
 
