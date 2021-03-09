@@ -5,7 +5,7 @@ const textRuleGame = 'Answer "yes" if given number is prime. Otherwise answer "n
 const generateGame = () => generateRandomNumber(0, 99);
 
 const isPrime = (number) => {
-  if (number < 1) return false;
+  if (number < 2) return false;
   for (let i = 2; i < number; i += 1) {
     if (number % i === 0) {
       return false;
