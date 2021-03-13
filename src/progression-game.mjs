@@ -1,6 +1,5 @@
 import { generateRandomNumber } from './util.mjs';
 
-let correctAnswer = 0;
 const textRuleGame = 'What number is missing in the progression?';
 let numberProg = 0;
 
@@ -37,14 +36,13 @@ const generateGame = () => {
   return progression.join(' ');
 };
 
-const checkAnswer = (expression, answer) => {
+const getRightAnswer = (expression) => {
   const progression = expression.split(' ');
-  correctAnswer = calculateEmptyOfProgression(progression);
-  return correctAnswer === parseInt(answer, 10);
+  return String(calculateEmptyOfProgression(progression));
 };
 
-const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
+const rightAnswer = (answer, correctAnswer) => answer !== correctAnswer && correctAnswer;
 
 export default {
-  generateGame, checkAnswer, rightAnswer, textRuleGame,
+  generateGame, getRightAnswer, rightAnswer, textRuleGame,
 };

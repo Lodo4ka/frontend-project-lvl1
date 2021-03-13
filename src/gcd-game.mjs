@@ -1,6 +1,5 @@
 import { generateRandomNumber } from './util.mjs';
 
-let correctAnswer = 0;
 const textRuleGame = 'Find the greatest common divisor of given numbers.';
 
 const nearDivider = (num1, num2) => {
@@ -20,14 +19,13 @@ const generateGame = () => {
   return `${firstNumber} ${secondNumber}`;
 };
 
-const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
+const rightAnswer = (answer, correctAnswer) => answer !== correctAnswer && correctAnswer;
 
-const checkAnswer = (expression, answer) => {
+const getRightAnswer = (expression) => {
   const [firstNumber, secondNumber] = expression.split(' ');
-  correctAnswer = nearDivider(firstNumber, secondNumber);
-  return correctAnswer === parseInt(answer, 10);
+  return String(nearDivider(firstNumber, secondNumber));
 };
 
 export default {
-  generateGame, checkAnswer, rightAnswer, textRuleGame,
+  generateGame, getRightAnswer, rightAnswer, textRuleGame,
 };

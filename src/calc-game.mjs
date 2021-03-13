@@ -1,6 +1,5 @@
 import { generateRandomNumber } from './util.mjs';
 
-let correctAnswer = 0;
 const textRuleGame = 'What is the result of the expression?';
 
 const generateRandomMathOperator = () => {
@@ -17,7 +16,7 @@ const calculateNumber = (operator, firstNum, secondNum) => {
   };
 
   return Object.prototype.hasOwnProperty.call(mathExpressionByOperator, operator)
-    ? mathExpressionByOperator[operator](firstNum, secondNum) : 0;
+    ? mathExpressionByOperator[operator](firstNum, secondNum) : null;
 };
 
 const generateGame = () => {
@@ -27,15 +26,14 @@ const generateGame = () => {
   return `${firstNumber} ${mathOperator} ${secondNumber}`;
 };
 
-const checkAnswer = (expression, answer) => {
+const getRightAnswer = (expression) => {
   const [firstNumber, mathOperator, secondNumber] = expression.split(' ');
-  correctAnswer = calculateNumber(mathOperator, parseInt(firstNumber, 10),
-    parseInt(secondNumber, 10));
-  return correctAnswer === parseInt(answer, 10);
+  return String(calculateNumber(mathOperator, parseInt(firstNumber, 10),
+    parseInt(secondNumber, 10)));
 };
 
-const rightAnswer = (answer) => answer !== correctAnswer && correctAnswer;
+const rightAnswer = (answer, correctAnswer) => answer !== correctAnswer && correctAnswer;
 
 export default {
-  generateGame, checkAnswer, rightAnswer, textRuleGame,
+  generateGame, getRightAnswer, rightAnswer, textRuleGame,
 };

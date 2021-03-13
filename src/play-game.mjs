@@ -8,13 +8,13 @@ const playGame = (game) => {
 
   for (let i = 0; i < 3; i += 1) {
     const calculations = game.generateGame();
-    const answer = readlineSync.question(`Question: ${calculations}\n`);
-    console.log(`Your answer: ${answer}!`);
-    const resultAnswer = game.checkAnswer(calculations, answer);
-    if (resultAnswer) {
+    const userAnswer = readlineSync.question(`Question: ${calculations}\n`);
+    console.log(`Your answer: ${userAnswer}!`);
+    const correctAnswer = game.getRightAnswer(calculations);
+    if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${answer} is wrong answer; Correct answer was '${game.rightAnswer(answer)}'.`);
+      console.log(`${userAnswer} is wrong answer; Correct answer was '${game.rightAnswer(userAnswer, correctAnswer)}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }
