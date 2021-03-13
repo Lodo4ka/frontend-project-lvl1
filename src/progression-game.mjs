@@ -1,9 +1,10 @@
 import { generateRandomNumber } from './util.mjs';
 
 const textRuleGame = 'What number is missing in the progression?';
+let randomLength = 0;
 
 const removeElemProgression = (progression) => {
-  const removedIndex = generateRandomNumber(0, 9);
+  const removedIndex = generateRandomNumber(0, randomLength);
   return progression.map((progElem, i) => {
     if (i === removedIndex) {
       return '..';
@@ -15,7 +16,8 @@ const removeElemProgression = (progression) => {
 const generateProgression = () => {
   const startProg = generateRandomNumber(0, 99);
   const numberProg = generateRandomNumber(0, 10);
-  return Array.from({ length: 10 })
+  randomLength = generateRandomNumber(5, 10);
+  return Array.from({ length: randomLength })
     .map((_, index) => startProg + (index * numberProg));
 };
 
