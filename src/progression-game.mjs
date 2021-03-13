@@ -17,7 +17,7 @@ const generateProgression = () => {
   const startProg = generateRandomNumber(0, 99);
   numberProg = generateRandomNumber(0, 10);
   return Array.from({ length: 10 })
-    .map((_, index) => index * startProg);
+    .map((_, index) => startProg + (index * numberProg));
 };
 
 const calculateEmptyOfProgression = (progression) => progression.map((elem, i) => {
