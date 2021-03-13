@@ -1,7 +1,6 @@
 import { generateRandomNumber } from './util.mjs';
 
 const textRuleGame = 'What number is missing in the progression?';
-let numberProg = 0;
 
 const removeElemProgression = (progression) => {
   const removedIndex = generateRandomNumber(0, 9);
@@ -15,20 +14,31 @@ const removeElemProgression = (progression) => {
 
 const generateProgression = () => {
   const startProg = generateRandomNumber(0, 99);
-  numberProg = generateRandomNumber(0, 10);
+  const numberProg = generateRandomNumber(0, 10);
   return Array.from({ length: 10 })
     .map((_, index) => startProg + (index * numberProg));
 };
 
-const calculateEmptyOfProgression = (progression) => progression.map((elem, i) => {
-  if (elem === '..') {
-    if (progression[i - 1]) {
-      return parseInt(progression[i - 1], 10) + parseInt(numberProg, 10);
+const calculateEmptyOfProgression = (progression) => {
+  const numberProg = progression.reduce((acc, el, index) => {
+    if (el === '..') {
+      if (progression[index - 1] && progression[index - 2]) {
+        return acc + parseInt(progression[index - 1], 10) - parseInt(progression[index - 2], 10);
+      }
+      return acc + parseInt(progression[index + 2], 10) - parseInt(progression[index + 1], 10);
     }
-    return parseInt(progression[i + 1], 10) - parseInt(numberProg, 10);
-  }
-  return false;
-}).filter(Boolean)[0];
+    return acc;
+  }, 0);
+  return progression.reduce((acc, elem, index) => {
+    if (elem === '..') {
+      if (progression[index - 1]) {
+        return acc + parseInt(progression[index - 1], 10) + parseInt(numberProg, 10);
+      }
+      return acc + parseInt(progression[index + 1], 10) - parseInt(numberProg, 10);
+    }
+    return acc + 0;
+  }, 0);
+};
 
 const generateGame = () => {
   let progression = generateProgression();
