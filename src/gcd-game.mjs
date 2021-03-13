@@ -2,7 +2,7 @@ import { generateRandomNumber } from './util.mjs';
 
 const textRuleGame = 'Find the greatest common divisor of given numbers.';
 
-const nearDivider = (num1, num2) => {
+const gcd = (num1, num2) => {
   const maxNumber = Math.max(num1, num2);
   const calculateDivider = (max) => {
     if (num1 % max === 0 && num2 % max === 0) {
@@ -23,7 +23,7 @@ const rightAnswer = (answer, correctAnswer) => answer !== correctAnswer && corre
 
 const getRightAnswer = (expression) => {
   const [firstNumber, secondNumber] = expression.split(' ');
-  return String(nearDivider(firstNumber, secondNumber));
+  return String(gcd(firstNumber, secondNumber));
 };
 
 export default {
