@@ -9,13 +9,15 @@ const generateRandomMathOperator = () => {
   return mathOperator[operator];
 };
 
-const calculateNumber = (operator, first, second) => {
-  const mathOperators = {
-    '+': (firstArg, secondArg) => firstArg + secondArg,
-    '-': (firstArg, secondArg) => firstArg - secondArg,
-    '*': (firstArg, secondArg) => firstArg * secondArg,
+const calculateNumber = (operator, firstNum, secondNum) => {
+  const mathExpressionByOperator = {
+    '+': (a, b) => a + b,
+    '-': (a, b) => a - b,
+    '*': (a, b) => a * b,
   };
-  return mathOperators[operator](first, second);
+
+  return Object.prototype.hasOwnProperty.call(mathExpressionByOperator, operator)
+    ? mathExpressionByOperator[operator](firstNum, secondNum) : 0;
 };
 
 const generateGame = () => {
