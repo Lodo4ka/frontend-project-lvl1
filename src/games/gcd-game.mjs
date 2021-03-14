@@ -16,14 +16,12 @@ const gcd = (num1, num2) => {
 const generateRoundGame = () => {
   const firstNumber = generateRandomNumber(0, 99);
   const secondNumber = generateRandomNumber(0, 99);
-  return `${firstNumber} ${secondNumber}`;
-};
-
-const getRightAnswer = (expression) => {
-  const [firstNumber, secondNumber] = expression.split(' ');
-  return String(gcd(firstNumber, secondNumber));
+  return {
+    expression: `${firstNumber} ${secondNumber}`,
+    rightAnswer: String(gcd(firstNumber, secondNumber)),
+  };
 };
 
 export default {
-  generateRoundGame, getRightAnswer, textRuleGame,
+  generateRoundGame, textRuleGame,
 };

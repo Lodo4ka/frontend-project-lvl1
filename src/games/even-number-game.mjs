@@ -4,13 +4,16 @@ const textRuleGame = 'Answer "yes" if the number is even, otherwise answer "no".
 
 const isEvenNumber = (number) => number % 2 === 0;
 
-const generateRoundGame = () => generateRandomNumber(0, 99);
-
-const getRightAnswer = (expression) => {
+const generateRoundGame = () => {
+  const expression = generateRandomNumber(0, 99);
   const evenAnswer = isEvenNumber(expression);
-  return answerYesOrNo(evenAnswer);
+  const rightAnswer = answerYesOrNo(evenAnswer);
+  return {
+    expression,
+    rightAnswer,
+  };
 };
 
 export default {
-  generateRoundGame, getRightAnswer, textRuleGame,
+  generateRoundGame, textRuleGame,
 };

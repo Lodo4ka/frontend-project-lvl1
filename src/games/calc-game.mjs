@@ -14,20 +14,20 @@ const calculateNumber = (operator, firstNum, secondNum) => {
 };
 
 const generateRoundGame = () => {
+  const mathOperators = ['+', '-', '*'];
   const firstNumber = generateRandomNumber(0, 99);
   const secondNumber = generateRandomNumber(0, 99);
-  const mathOperators = ['+', '-', '*'];
   const operator = generateRandomNumber(0, mathOperators.length - 1);
   const mathOperator = mathOperators[operator];
-  return `${firstNumber} ${mathOperator} ${secondNumber}`;
-};
-
-const getRightAnswer = (expression) => {
-  const [firstNumber, mathOperator, secondNumber] = expression.split(' ');
-  return String(calculateNumber(mathOperator, parseInt(firstNumber, 10),
+  const rightAnswer = String(calculateNumber(mathOperator,
+    parseInt(firstNumber, 10),
     parseInt(secondNumber, 10)));
+  return {
+    expression: `${firstNumber} ${mathOperator} ${secondNumber}`,
+    rightAnswer,
+  };
 };
 
 export default {
-  generateRoundGame, getRightAnswer, textRuleGame,
+  generateRoundGame, textRuleGame,
 };
