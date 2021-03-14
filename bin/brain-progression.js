@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import cli from '../src/cli-game.mjs';
+import playGame from '../src/play-game.mjs';
+import progression from '../src/games/progression-game.mjs';
 
-cli('progression');
+playGame(progression);

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import cli from '../src/cli-game.mjs';
+import playGame from '../src/play-game.mjs';
+import prime from '../src/games/prime-game.mjs';
 
-cli('prime');
+playGame(prime);
