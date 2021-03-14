@@ -16,8 +16,9 @@ const gcd = (num1, num2) => {
 const generateRoundGame = () => {
   const firstNumber = generateRandomNumber(0, 99);
   const secondNumber = generateRandomNumber(0, 99);
+  const expression = `${firstNumber} ${secondNumber}`;
   return {
-    expression: `${firstNumber} ${secondNumber}`,
+    expression,
     rightAnswer: String(gcd(firstNumber, secondNumber)),
   };
 };

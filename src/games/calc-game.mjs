@@ -19,11 +19,12 @@ const generateRoundGame = () => {
   const secondNumber = generateRandomNumber(0, 99);
   const operator = generateRandomNumber(0, mathOperators.length - 1);
   const mathOperator = mathOperators[operator];
+  const expression = `${firstNumber} ${mathOperator} ${secondNumber}`;
   const rightAnswer = String(calculateNumber(mathOperator,
     parseInt(firstNumber, 10),
     parseInt(secondNumber, 10)));
   return {
-    expression: `${firstNumber} ${mathOperator} ${secondNumber}`,
+    expression,
     rightAnswer,
   };
 };

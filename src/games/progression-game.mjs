@@ -27,8 +27,9 @@ const generateRoundGame = () => {
   const progression = generateProgression(startProg, numberProg, randomLength);
   const progressionWithEmpty = removeElemProgression(progression, removedIndex);
   const rightAnswer = String(calculateEmptyOfProgression(progression, numberProg));
+  const expression = progressionWithEmpty.join(' ');
   return {
-    expression: progressionWithEmpty.join(' '),
+    expression,
     rightAnswer,
   };
 };
