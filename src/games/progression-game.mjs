@@ -1,27 +1,12 @@
-import { generateRandomNumber } from './util.mjs';
+import { generateRandomNumber } from '../util.mjs';
 
 const textRuleGame = 'What number is missing in the progression?';
 
-const removeElemProgression = (progressionData) => {
-  const removedIndex = generateRandomNumber(0, progressionData.randomLength);
-  return progressionData.progression.map((progElem, i) => {
-    if (i === removedIndex) {
-      return '..';
-    }
-    return progElem;
-  });
-};
+const removeElemProgression = (progression, removedIndex) => progression
+  .map((progElem, i) => (i === removedIndex ? '..' : progElem));
 
-const generateProgression = () => {
-  const startProg = generateRandomNumber(0, 99);
-  const numberProg = generateRandomNumber(0, 10);
-  const randomLength = generateRandomNumber(5, 10);
-  const progression = Array.from({ length: randomLength })
-    .map((_, index) => startProg + (index * numberProg));
-  return {
-    progression, randomLength,
-  };
-};
+const generateProgression = (startProg, numberProg, randomLength) => Array
+  .from({ length: randomLength }).map((_, index) => startProg + (index * numberProg));
 
 const calculateEmptyOfProgression = (progression) => {
   const numberProg = progression.reduce((acc, el, index) => {
@@ -44,10 +29,14 @@ const calculateEmptyOfProgression = (progression) => {
   }, 0);
 };
 
-const generateGame = () => {
-  const progressionData = generateProgression();
-  const progression = removeElemProgression(progressionData);
-  return progression.join(' ');
+const generateRoundGame = () => {
+  const startProg = generateRandomNumber(0, 99);
+  const numberProg = generateRandomNumber(0, 10);
+  const randomLength = generateRandomNumber(5, 10);
+  const removedIndex = generateRandomNumber(0, randomLength);
+  const progression = generateProgression(startProg, numberProg, randomLength);
+  const progressionWithEmpty = removeElemProgression(progression, removedIndex);
+  return progressionWithEmpty.join(' ');
 };
 
 const getRightAnswer = (expression) => {
@@ -55,8 +44,6 @@ const getRightAnswer = (expression) => {
   return String(calculateEmptyOfProgression(progression));
 };
 
-const rightAnswer = (answer, correctAnswer) => answer !== correctAnswer && correctAnswer;
-
 export default {
-  generateGame, getRightAnswer, rightAnswer, textRuleGame,
+  generateRoundGame, getRightAnswer, textRuleGame,
 };

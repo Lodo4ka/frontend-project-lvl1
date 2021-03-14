@@ -1,4 +1,4 @@
-import { generateRandomNumber } from './util.mjs';
+import { generateRandomNumber } from '../util.mjs';
 
 const textRuleGame = 'Find the greatest common divisor of given numbers.';
 
@@ -13,13 +13,11 @@ const gcd = (num1, num2) => {
   return calculateDivider(maxNumber);
 };
 
-const generateGame = () => {
+const generateRoundGame = () => {
   const firstNumber = generateRandomNumber(0, 99);
   const secondNumber = generateRandomNumber(0, 99);
   return `${firstNumber} ${secondNumber}`;
 };
-
-const rightAnswer = (answer, correctAnswer) => answer !== correctAnswer && correctAnswer;
 
 const getRightAnswer = (expression) => {
   const [firstNumber, secondNumber] = expression.split(' ');
@@ -27,5 +25,5 @@ const getRightAnswer = (expression) => {
 };
 
 export default {
-  generateGame, getRightAnswer, rightAnswer, textRuleGame,
+  generateRoundGame, getRightAnswer, textRuleGame,
 };

@@ -1,12 +1,6 @@
-import { generateRandomNumber } from './util.mjs';
+import { generateRandomNumber } from '../util.mjs';
 
 const textRuleGame = 'What is the result of the expression?';
-
-const generateRandomMathOperator = () => {
-  const mathOperator = ['+', '-', '*'];
-  const operator = generateRandomNumber(0, mathOperator.length - 1);
-  return mathOperator[operator];
-};
 
 const calculateNumber = (operator, firstNum, secondNum) => {
   const mathExpressionByOperator = {
@@ -19,10 +13,12 @@ const calculateNumber = (operator, firstNum, secondNum) => {
     ? mathExpressionByOperator[operator](firstNum, secondNum) : null;
 };
 
-const generateGame = () => {
+const generateRoundGame = () => {
   const firstNumber = generateRandomNumber(0, 99);
   const secondNumber = generateRandomNumber(0, 99);
-  const mathOperator = generateRandomMathOperator();
+  const mathOperators = ['+', '-', '*'];
+  const operator = generateRandomNumber(0, mathOperators.length - 1);
+  const mathOperator = mathOperators[operator];
   return `${firstNumber} ${mathOperator} ${secondNumber}`;
 };
 
@@ -32,8 +28,6 @@ const getRightAnswer = (expression) => {
     parseInt(secondNumber, 10)));
 };
 
-const rightAnswer = (answer, correctAnswer) => answer !== correctAnswer && correctAnswer;
-
 export default {
-  generateGame, getRightAnswer, rightAnswer, textRuleGame,
+  generateRoundGame, getRightAnswer, textRuleGame,
 };

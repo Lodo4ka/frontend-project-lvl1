@@ -7,14 +7,14 @@ const playGame = (game) => {
   console.log(game.textRuleGame);
 
   for (let i = 0; i < 3; i += 1) {
-    const calculations = game.generateGame();
+    const calculations = game.generateRoundGame();
     const userAnswer = readlineSync.question(`Question: ${calculations}\n`);
     console.log(`Your answer: ${userAnswer}!`);
     const correctAnswer = game.getRightAnswer(calculations);
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer; Correct answer was '${game.rightAnswer(userAnswer, correctAnswer)}'.`);
+      console.log(`${userAnswer} is wrong answer; Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${name}!`);
       return;
     }

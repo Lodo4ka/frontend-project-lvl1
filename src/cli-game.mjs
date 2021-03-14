@@ -1,9 +1,9 @@
 import playGame from './play-game.mjs';
-import calcGame from './calc-game.mjs';
-import evenNumberGame from './even-number-game.mjs';
-import gcdGame from './gcd-game.mjs';
-import primeGame from './prime-game.mjs';
-import progressionGame from './progression-game.mjs';
+import calcGame from './games/calc-game.mjs';
+import evenNumberGame from './games/even-number-game.mjs';
+import gcdGame from './games/gcd-game.mjs';
+import primeGame from './games/prime-game.mjs';
+import progressionGame from './games/progression-game.mjs';
 
 const dictGames = {
   even: evenNumberGame,
