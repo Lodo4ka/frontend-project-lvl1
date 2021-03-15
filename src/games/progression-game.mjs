@@ -12,7 +12,7 @@ const generateRoundGame = () => {
   const startProg = generateRandomNumber(0, 99);
   const numberProg = generateRandomNumber(0, 10);
   const randomLength = generateRandomNumber(5, 10);
-  const removedIndex = generateRandomNumber(0, randomLength);
+  const removedIndex = generateRandomNumber(0, randomLength - 1);
   const progression = generateProgression(startProg, numberProg, randomLength);
   const progressionWithEmpty = removeElemProgression(progression, removedIndex);
   const rightAnswer = String(progression[removedIndex]);
