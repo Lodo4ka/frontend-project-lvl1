@@ -9,7 +9,7 @@ const calculateNumber = (operator, firstNum, secondNum) => {
     '*': (a, b) => a * b,
   };
 
-  return Object.prototype.hasOwnProperty.call(mathExpressionByOperator, operator)
+  return mathExpressionByOperator[operator]
     ? mathExpressionByOperator[operator](firstNum, secondNum) : null;
 };
 
