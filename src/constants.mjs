@@ -1,3 +1,3 @@
-const ROUND_GAME = 3;
+const COUNTS_GAME_ROUND = 3;
 
-export default ROUND_GAME;
+export default COUNTS_GAME_ROUND;

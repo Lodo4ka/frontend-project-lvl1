@@ -1,19 +1,19 @@
 import { generateRandomNumber, answerYesOrNo } from '../util.mjs';
 
-const textRuleGame = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEvenNumber = (number) => number % 2 === 0;
 
-const generateRoundGame = () => {
-  const expression = generateRandomNumber(0, 99);
-  const evenAnswer = isEvenNumber(expression);
+const generateRound = () => {
+  const round = generateRandomNumber(0, 99);
+  const evenAnswer = isEvenNumber(round);
   const rightAnswer = answerYesOrNo(evenAnswer);
   return {
-    expression,
+    round,
     rightAnswer,
   };
 };
 
 export default {
-  generateRoundGame, textRuleGame,
+  generateRound, rule,
 };

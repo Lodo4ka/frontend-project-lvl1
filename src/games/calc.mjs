@@ -1,34 +1,38 @@
 import { generateRandomNumber } from '../util.mjs';
 
-const textRuleGame = 'What is the result of the expression?';
+const rule = 'What is the result of the round?';
 
 const calculateNumber = (operator, firstNum, secondNum) => {
-  const mathExpressionByOperator = {
+  const mathroundByOperator = {
     '+': (a, b) => a + b,
     '-': (a, b) => a - b,
     '*': (a, b) => a * b,
   };
 
-  return mathExpressionByOperator[operator]
-    ? mathExpressionByOperator[operator](firstNum, secondNum) : null;
+  return mathroundByOperator[operator]
+    ? mathroundByOperator[operator](firstNum, secondNum) : null;
 };
 
-const generateRoundGame = () => {
+const getRandomMathOperator = () => {
   const mathOperators = ['+', '-', '*'];
+  const operator = generateRandomNumber(0, mathOperators.length - 1);
+  return mathOperators[operator];
+};
+
+const generateRound = () => {
   const firstNumber = generateRandomNumber(0, 99);
   const secondNumber = generateRandomNumber(0, 99);
-  const operator = generateRandomNumber(0, mathOperators.length - 1);
-  const mathOperator = mathOperators[operator];
-  const expression = `${firstNumber} ${mathOperator} ${secondNumber}`;
+  const mathOperator = getRandomMathOperator();
+  const round = `${firstNumber} ${mathOperator} ${secondNumber}`;
   const rightAnswer = String(calculateNumber(mathOperator,
     parseInt(firstNumber, 10),
     parseInt(secondNumber, 10)));
   return {
-    expression,
+    round,
     rightAnswer,
   };
 };
 
 export default {
-  generateRoundGame, textRuleGame,
+  generateRound, rule,
 };

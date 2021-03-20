@@ -1,6 +1,6 @@
 import { generateRandomNumber } from '../util.mjs';
 
-const textRuleGame = 'Find the greatest common divisor of given numbers.';
+const rule = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (num1, num2) => {
   const maxNumber = Math.max(num1, num2);
@@ -13,16 +13,16 @@ const gcd = (num1, num2) => {
   return calculateDivider(maxNumber);
 };
 
-const generateRoundGame = () => {
+const generateRound = () => {
   const firstNumber = generateRandomNumber(0, 99);
   const secondNumber = generateRandomNumber(0, 99);
-  const expression = `${firstNumber} ${secondNumber}`;
+  const round = `${firstNumber} ${secondNumber}`;
   return {
-    expression,
+    round,
     rightAnswer: String(gcd(firstNumber, secondNumber)),
   };
 };
 
 export default {
-  generateRoundGame, textRuleGame,
+  generateRound, rule,
 };

@@ -1,6 +1,6 @@
 import { generateRandomNumber } from '../util.mjs';
 
-const textRuleGame = 'What number is missing in the progression?';
+const rule = 'What number is missing in the progression?';
 
 const removeElemProgression = (progression, removedIndex) => progression
   .map((progElem, i) => (i === removedIndex ? '..' : progElem));
@@ -8,7 +8,7 @@ const removeElemProgression = (progression, removedIndex) => progression
 const generateProgression = (startProg, numberProg, randomLength) => Array
   .from({ length: randomLength }).map((_, index) => startProg + (index * numberProg));
 
-const generateRoundGame = () => {
+const generateRound = () => {
   const startProg = generateRandomNumber(0, 99);
   const numberProg = generateRandomNumber(0, 10);
   const randomLength = generateRandomNumber(5, 10);
@@ -16,13 +16,13 @@ const generateRoundGame = () => {
   const progression = generateProgression(startProg, numberProg, randomLength);
   const progressionWithEmpty = removeElemProgression(progression, removedIndex);
   const rightAnswer = String(progression[removedIndex]);
-  const expression = progressionWithEmpty.join(' ');
+  const round = progressionWithEmpty.join(' ');
   return {
-    expression,
+    round,
     rightAnswer,
   };
 };
 
 export default {
-  generateRoundGame, textRuleGame,
+  generateRound, rule,
 };
