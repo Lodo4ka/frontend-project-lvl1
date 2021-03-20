@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import ROUND_GAME from './constants.mjs';
 
 const playGame = (game) => {
   console.log('Welcome to the Brain Games!');
@@ -6,7 +7,7 @@ const playGame = (game) => {
   console.log(`Hello, ${name}!`);
   console.log(game.textRuleGame);
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < ROUND_GAME; i += 1) {
     const { expression, rightAnswer } = game.generateRoundGame();
     const userAnswer = readlineSync.question(`Question: ${expression}\n`);
     console.log(`Your answer: ${userAnswer}!`);
