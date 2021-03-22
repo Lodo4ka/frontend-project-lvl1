@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import COUNTS_GAME_ROUND from './constants.mjs';
+
+const COUNTS_GAME_ROUND = 3;
 
 const playGame = (game) => {
   console.log('Welcome to the Brain Games!');
