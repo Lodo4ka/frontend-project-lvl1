@@ -9,8 +9,8 @@ const playGame = (game) => {
   console.log(game.rule);
 
   for (let i = 0; i < COUNTS_GAME_ROUND; i += 1) {
-    const { round, rightAnswer } = game.generateRound();
-    const userAnswer = readlineSync.question(`Question: ${round}\n`);
+    const { question, rightAnswer } = game.generateRound();
+    const userAnswer = readlineSync.question(`Question: ${question}\n`);
     console.log(`Your answer: ${userAnswer}!`);
     if (rightAnswer === userAnswer) {
       console.log('Correct!');

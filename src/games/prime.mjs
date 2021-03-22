@@ -15,11 +15,11 @@ const isPrime = (number) => {
 };
 
 const generateRound = () => {
-  const round = generateRandomNumber(0, 99);
-  const primeAnswer = isPrime(round);
+  const question = generateRandomNumber(0, 99);
+  const primeAnswer = isPrime(question);
   const rightAnswer = answerYesOrNo(primeAnswer);
   return {
-    round,
+    question,
     rightAnswer,
   };
 };
