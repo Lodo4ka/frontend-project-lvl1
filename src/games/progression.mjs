@@ -2,7 +2,7 @@ import { generateRandomNumber } from '../util.mjs';
 
 const rule = 'What number is missing in the progression?';
 
-const removeElemProgression = (progression, removedIndex) => progression
+const hideElement = (progression, removedIndex) => progression
   .map((progElem, i) => (i === removedIndex ? '..' : progElem));
 
 const generateProgression = (startProg, numberProg, randomLength) => Array
@@ -14,7 +14,7 @@ const generateRound = () => {
   const randomLength = generateRandomNumber(5, 10);
   const removedIndex = generateRandomNumber(0, randomLength - 1);
   const progression = generateProgression(startProg, numberProg, randomLength);
-  const progressionWithEmpty = removeElemProgression(progression, removedIndex);
+  const progressionWithEmpty = hideElement(progression, removedIndex);
   const rightAnswer = String(progression[removedIndex]);
   const round = progressionWithEmpty.join(' ');
   return {
