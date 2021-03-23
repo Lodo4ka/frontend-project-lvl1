@@ -24,9 +24,7 @@ const generateRound = () => {
   const secondNumber = generateRandomNumber(0, 99);
   const mathOperator = getRandomMathOperator();
   const question = `${firstNumber} ${mathOperator} ${secondNumber}`;
-  const rightAnswer = String(calculateNumber(mathOperator,
-    parseInt(firstNumber, 10),
-    parseInt(secondNumber, 10)));
+  const rightAnswer = String(calculateNumber(mathOperator, firstNumber, secondNumber));
   return {
     question,
     rightAnswer,
