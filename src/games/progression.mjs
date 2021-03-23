@@ -5,8 +5,8 @@ const rule = 'What number is missing in the progression?';
 const hideElement = (progression, removedIndex) => progression
   .map((progElem, i) => (i === removedIndex ? '..' : progElem));
 
-const generateProgression = (startProg, numberProg, randomLength) => Array
-  .from({ length: randomLength }).map((_, index) => startProg + (index * numberProg));
+const generateProgression = (start, step, length) => Array
+  .from({ length: length }).map((_, index) => start + (index * step));
 
 const generateRound = () => {
   const start = generateRandomNumber(0, 99);
